@@ -4,9 +4,7 @@ import { GoogleAuthProvider,
          signOut,onAuthStateChanged
         } from "firebase/auth";
 import { auth } from "../firebase-config";
-
 const AuthContext = createContext({})
-
 export const AuthContextProvider = ({children}) => { 
     const [user, setUser] = useState({})
     const googleSignIn = () => {

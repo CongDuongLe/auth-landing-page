@@ -22,15 +22,27 @@ function App() {
         <Routes
         // set initial route is Home   
         >
-          <Route path=":login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/home" element={
             <Protected>
               <Home />
             </Protected>} />
-          <Route path="/about" element={<About />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/skill" element={<Skill />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={
+            <Protected>
+              <About />
+            </Protected>}/>
+          <Route path="/product" element={
+            <Protected>
+              <Product />
+            </Protected>}/>
+          <Route path="/skill" element={
+            <Protected> 
+             <Skill />
+            </Protected>} />
+          <Route path="/contact" element={
+            <Protected>
+              <Contact />
+            </Protected>} />
         </Routes>
       </AuthContextProvider>
     </div>

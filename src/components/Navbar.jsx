@@ -24,7 +24,7 @@ function Navbar() {
     const handleSignOut = async () => {
         try {
             await SignOut()
-            navigation('/login')
+            navigation('/')
         } catch (err) {
             console.log(err)
         }
@@ -60,21 +60,16 @@ function Navbar() {
                </li>
                {/* check user, if login is hidden button */}
                 {user ?
-                <li className ='li-section'>
-                    <Link to='/login' smooth={true} duration={500} onClick={() => {
+               ( <li className ='li-section'>
+                    <button 
+                        onClick={handleSignOut} 
+                        className='text-white border-2 hover:bg-pink-600 hover:border-pink-600 px-4 py-3 my-8 mx-auto flex items-center rounded-xl'>Sign Out</button>
+                    {/* <Link to='login' smooth={true} duration={500} onClick={() => {
                         handleSignOut()
                         
-                    }}> Sign Out </Link>
-                </li>
-                :
-                <button className='button-primary text-[16px] lg:px-8 lg:py-3 md:px-6 md:py-2 font-Quicksand font-semibold'
-                >
-                   <Link to='login' smooth={true} duration={500} >
-                          Sign In
-                   </Link>
-               </button>
-}
-              
+                    }}> Sign Out </Link> */}
+                </li>)
+                : null}     
            </ul>
        </div>
        {/* hamburger menu */}
